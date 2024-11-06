@@ -5,4 +5,4 @@ RUN mvn clean package -DskipTests
 FROM openjdk:17.0.1-jdk-slim
 COPY --from=build /target/deployProject-0.0.1-SNAPSHOT.jar /out/artifacts/deployProject_jar/deployProject.jar
 EXPOSE 8080
-ENTRYPOINT ["java","-jar","deployProject.jar"]
+ENTRYPOINT ["java","-jar","/out/artifacts/deployProject_jar/deployProject.jar"]
